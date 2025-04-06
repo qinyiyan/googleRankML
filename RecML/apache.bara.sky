@@ -1,0 +1,68 @@
+"""Copybara utility functions."""
+
+APACHE_HEADER_ = """\
+{opening_comment}{comment} Copyright {year} {author}.
+{comment}
+{comment} Licensed under the Apache License, Version 2.0 (the "License");
+{comment} you may not use this file except in compliance with the License.
+{comment} You may obtain a copy of the License at
+{comment}
+{comment}     http://www.apache.org/licenses/LICENSE-2.0
+{comment}
+{comment} Unless required by applicable law or agreed to in writing, software
+{comment} distributed under the License is distributed on an "AS IS" BASIS,
+{comment} WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+{comment} See the License for the specific language governing permissions and
+{comment} limitations under the License.{closing_comment}
+"""
+
+def add_apache_header(
+        copyright_holder,
+        paths,
+        copyright_year = "2024",
+        comment_chars = "#",
+        comment_chars_opening = "",
+        comment_chars_closing = "",
+        before = ""):
+    return core.transform(
+        [
+            core.replace(
+                before = before,
+                after = APACHE_HEADER_.format(
+                    author = copyright_holder,
+                    comment = comment_chars,
+                    opening_comment = comment_chars_opening,
+                    closing_comment = comment_chars_closing,
+                    year = copyright_year,
+                ),
+                paths = paths,
+                first_only = True,
+                multiline = True,
+            ),
+        ],
+        reversal = [
+            core.replace(
+                before = APACHE_HEADER_.format(
+                    author = copyright_holder,
+                    comment = comment_chars,
+                    opening_comment = comment_chars_opening,
+                    closing_comment = comment_chars_closing,
+                    year = "${year}",
+                ),
+                after = before,
+                regex_groups = {"year": r"\d{4}"},
+                paths = paths,
+                first_only = True,
+                multiline = True,
+            ),
+        ],
+    )
+
+def verify_apache_header(
+        paths,
+        also_on_reversal = True):
+    return core.verify_match(
+        regex = "Licensed under the Apache License, Version 2.0",
+        paths = paths,
+        also_on_reversal = also_on_reversal,
+    )
