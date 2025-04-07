@@ -1,5 +1,5 @@
 # RecML
-Reference implementation training recommender models on TPU
+Reference implementation for training recommender models on TPU
 
 ## Setup
 
