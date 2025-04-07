@@ -1,5 +1,5 @@
-# RankML
-RankML Library for TPU in Keras and Flax
+# RecML
+Reference implementation training recommender models on TPU
 
 ## Setup
 
