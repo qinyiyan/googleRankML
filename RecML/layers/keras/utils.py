@@ -131,3 +131,10 @@ def apply_rotary_encoding(
       [x1 * cos - x2 * sin, x2 * cos + x1 * sin], axis=-1
   )
   return keras.ops.cast(res, keras.ops.dtype(x))
+
+
+def large_negative_for_attention(dtype: Any) -> float:
+  """Return a large negative number based on dtype."""
+  if keras.backend.standardize_dtype(dtype) == "float16":
+    return -3e4
+  return -1e9
