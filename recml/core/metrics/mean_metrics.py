@@ -15,7 +15,7 @@
 
 import jax
 import keras
-from mlrx.metrics import reduction_metrics
+from recml.core.metrics import reduction_metrics
 
 
 def accuracy(

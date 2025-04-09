@@ -15,7 +15,7 @@
 
 from absl.testing import absltest
 import jax.numpy as jnp
-from mlrx.metrics import base_metrics
+from recml.core.metrics import base_metrics
 
 
 class BaseMetricsTest(absltest.TestCase):

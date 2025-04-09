@@ -17,7 +17,7 @@ from absl.testing import absltest
 import jax
 import numpy as np
 import optax
-from mlrx.training import optax_factory
+from recml.core.training import optax_factory
 
 
 class OptaxFactoryTest(absltest.TestCase):

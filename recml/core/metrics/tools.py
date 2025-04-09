@@ -24,7 +24,7 @@ from absl import flags
 from clu import metric_writers
 import clu.metrics as clu_metrics
 import jax
-from mlrx.metrics import base_metrics
+from recml.core.metrics import base_metrics
 
 
 FLAGS = flags.FLAGS

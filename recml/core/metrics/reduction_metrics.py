@@ -21,7 +21,7 @@ from typing import Any, Self
 
 import jax
 import jax.numpy as jnp
-from mlrx.metrics import base_metrics
+from recml.core.metrics import base_metrics
 
 
 class ReductionMetric(base_metrics.Metric):

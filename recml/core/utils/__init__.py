@@ -15,7 +15,7 @@
 
 # pylint: disable=g-importing-member
 
-from mlrx.utils.config import DEFINE_fiddle_config
-from mlrx.utils.config import FiddleFlag
-from mlrx.utils.types import Dataclass
-from mlrx.utils.types import FrozenDataclass
+from recml.core.utils.config import DEFINE_fiddle_config
+from recml.core.utils.config import FiddleFlag
+from recml.core.utils.types import Dataclass
+from recml.core.utils.types import FrozenDataclass

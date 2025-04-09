@@ -17,7 +17,7 @@ import dataclasses
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from mlrx.utils import types
+from recml.core.utils import types
 
 
 class TypesTest(parameterized.TestCase):

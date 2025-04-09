@@ -19,7 +19,7 @@ from absl.testing import absltest
 from absl.testing import parameterized
 import jax
 import numpy as np
-from mlrx.metrics import confusion_metrics
+from recml.core.metrics import confusion_metrics
 
 
 class ConfusionMetricsTest(parameterized.TestCase):

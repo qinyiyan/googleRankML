@@ -21,7 +21,7 @@ from absl import flags
 from absl.testing import absltest
 from absl.testing import parameterized
 import fiddle as fdl
-from mlrx.utils import config as config_lib
+from recml.core.utils import config as config_lib
 
 # Pytest may use the test from a different module, otherwise this should be
 # __main__.

@@ -32,11 +32,11 @@ import keras
 import numpy as np
 import optax
 import orbax.checkpoint as ocp
-from mlrx.data import iterator as iterator_lib
-from mlrx.metrics import base_metrics
-from mlrx.metrics import tools as metrics_tools
-from mlrx.training import core
-from mlrx.training import partitioning
+from recml.core.data import iterator as iterator_lib
+from recml.core.metrics import base_metrics
+from recml.core.metrics import tools as metrics_tools
+from recml.core.training import core
+from recml.core.training import partitioning
 import tensorflow as tf
 
 

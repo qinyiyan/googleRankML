@@ -26,7 +26,7 @@ from typing import Any, Protocol
 
 from absl import logging
 import jax
-from mlrx.utils import types
+from recml.core.utils import types
 import tensorflow.compat.v2 as tf
 import tensorflow_datasets as tfds
 

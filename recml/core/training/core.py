@@ -21,7 +21,7 @@ from typing import Any, Generic, TypeVar
 
 import jax
 import jax.numpy as jnp
-from mlrx.data import iterator
+from recml.core.data import iterator
 import tensorflow as tf
 
 

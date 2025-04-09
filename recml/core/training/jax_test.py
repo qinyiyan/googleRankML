@@ -29,9 +29,9 @@ import jaxtyping as jt
 import keras
 import optax
 import orbax.checkpoint as ocp
-from mlrx.training import core
-from mlrx.training import jax as jax_lib
-from mlrx.training import partitioning
+from recml.core.training import core
+from recml.core.training import jax as jax_lib
+from recml.core.training import partitioning
 import tensorflow as tf
 
 

@@ -19,7 +19,7 @@ from typing import Any
 from absl.testing import absltest
 from absl.testing import parameterized
 import numpy as np
-from mlrx.metrics import reduction_metrics
+from recml.core.metrics import reduction_metrics
 
 
 def mse(y_true, y_pred):

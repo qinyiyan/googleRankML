@@ -20,7 +20,7 @@ from typing import Any
 
 import jax
 import optax
-from mlrx.utils import types
+from recml.core.utils import types
 
 
 def _default_weight_decay_mask(params: optax.Params) -> optax.Params:

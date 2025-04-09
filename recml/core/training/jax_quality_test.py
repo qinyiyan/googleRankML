@@ -25,8 +25,8 @@ import jax
 import jax.numpy as jnp
 import jaxtyping as jt
 import optax
-from mlrx.training import jax as jax_lib
-from mlrx.training import partitioning
+from recml.core.training import jax as jax_lib
+from recml.core.training import partitioning
 import tensorflow as tf
 import tensorflow_datasets as tfds
 

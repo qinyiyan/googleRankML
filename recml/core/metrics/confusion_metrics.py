@@ -20,7 +20,7 @@ import jax
 import jax.numpy as jnp
 import jaxtyping as jt
 import numpy as np
-from mlrx.metrics import base_metrics
+from recml.core.metrics import base_metrics
 
 # pylint: disable=redefined-outer-name
 EPSILON = 1e-7
