@@ -471,7 +471,7 @@ class HSTUBlock(keras.layers.Layer):
     gated_attn_output = u * normed_attn_output
 
     out = self._output_dense(gated_attn_output)
-    return out + normed_inputs
+    return out + inputs
 
   def get_config(self) -> dict[str, Any]:
     return {
