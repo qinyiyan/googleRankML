@@ -115,7 +115,7 @@ class TFDatasetFactory(types.Factory[tf.data.Dataset]):
       Optionally, a sequence of such strings can be provided to create an evenly
       distributed mixture of datasets. This or `input_path` must be set.
     file_format: The file format of the input files. Must be one of 'tfrecord',
-      'recordio', 'sstable'. Defaults to recordio.
+      'recordio', 'sstable', 'array_record'. Defaults to recordio.
     global_batch_size: The global batch size across all replicas.
     drop_remainder: Whether the last batch should be dropped in the case it has
       fewer than `global_batch_size` elements.
@@ -211,6 +211,7 @@ class TFDatasetFactory(types.Factory[tf.data.Dataset]):
       infinitely repeated
   """
 
+  cache_reading: bool = False
   input_path: str | Sequence[str] = ""
   tfds_source: str | Sequence[str] = ""
   file_format: FileFormat = FileFormat.RECORDIO
@@ -555,7 +556,10 @@ class TFDatasetFactory(types.Factory[tf.data.Dataset]):
   def make(self) -> tf.data.Dataset:
     """Creates a `tf.data.Dataset` instance with all dataset ops applied."""
     # Create an examples dataset.
-    dataset = self._create_dataset()
+    if self.cache_reading:
+      dataset = self._create_dataset().cache()
+    else:
+      dataset = self._create_dataset()
     # Shuffle and repeat the dataset.
     dataset = self._maybe_shuffle_and_repeat(dataset)
     # Batch and parse the examples dataset.
