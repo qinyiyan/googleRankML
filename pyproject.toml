@@ -4,17 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "RecML"
-version = "0.1.0"
+version = "0.1.1"
 description = "RecML is envisioned as a high-performance, large-scale deep learning recommender system library optimized for Cloud TPUs"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {file = "LICENSE"}
+license-files = ["LICENSE"]
 dynamic = ["dependencies"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]  
-where = ["recml"]
+where = ["."]
 include = ["recml*"]
-exclude = ["recml/**/test*.py", "recml/**/*test.py", "recml/**/tests"]
